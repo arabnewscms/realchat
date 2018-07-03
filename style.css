@@ -1,60 +1,49 @@
-@import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
-.chat
-{
-    list-style: none;
-    margin: 0;
-    padding: 0;
+ /* Chat containers */
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
 }
 
-.chat li
-{
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #B3A9A9;
+/* Darker chat container */
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
 }
 
-.chat li.left .chat-body
-{
-    margin-left: 60px;
+/* Clear floats */
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
-.chat li.right .chat-body
-{
-    margin-right: 60px;
+/* Style images */
+.container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
 }
 
-
-.chat li .chat-body p
-{
-    margin: 0;
-    color: #777777;
+/* Style the right image */
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
 }
 
-.panel .slidedown .glyphicon, .chat .glyphicon
-{
-    margin-right: 5px;
+/* Style time text */
+.time-right {
+    float: right;
+    color: #aaa;
 }
 
-.body-panel
-{
-    overflow-y: scroll;
-    height: 250px;
-}
-
-::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar
-{
-    width: 12px;
-    background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar-thumb
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #555;
-}
+/* Style time text */
+.time-left {
+    float: left;
+    color: #999;
+} 
