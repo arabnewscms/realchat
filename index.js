@@ -7,21 +7,3 @@ var server = application.listen(5000,function(){
 });
 
 application.use(express.static('public_html'));
-
-var sio = socket(server);
-
-sio.on('connection',function(visitor){
-
-	console.log('we have a new visitor as id=>',visitor.id);
-
-	visitor.on('message',function(data){
-		sio.sockets.emit('new_msg',data); 
-	});
-
-	
-	visitor.on('borad',function(data){
-		visitor.broadcast.emit('new_borad',data); 
-	});
-
-
-});
