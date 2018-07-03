@@ -13,5 +13,7 @@ var sio = socket(server);
 sio.on('connection',function(visitor){
 
 	console.log('we have a new visitor as id=>',visitor.id);
-
+	visitor.on('message',function(data){
+		sio.sockets.emit('new_msg',data); 
+	});
 });
